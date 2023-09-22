@@ -181,7 +181,7 @@ function getCheapestProduct(products) {
   // Your code here
   return products.sort((a, b) => a.price - b.price)[0];
 }
-// console.log(getCheapestProduct(products));
+console.log(getCheapestProduct(products));
 
 /**********
     Question 7:
@@ -222,10 +222,7 @@ function getCheapestProduct(products) {
 
 function removeProductById(products, productId) {
   // Your code here
-  products.splice(
-    products.find((e) => e.id == productId),
-    1
-  );
+  products.splice(products.indexOf(products.find((e) => e.id == productId)), 1);
   return products;
 }
 
@@ -235,6 +232,7 @@ console.log(removeProductById(products, 202));
     Question 8: 🌶️🌶️🌶️
     getProductsByPriceRange(products, minPrice, maxPrice):
     - receives an array of product objects
+
     - receives a minimum price (number) and a maximum price (number)
     - returns an array of product objects that fall within the specified price range (inclusive)
     ===
